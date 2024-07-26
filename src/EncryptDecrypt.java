@@ -1,4 +1,4 @@
-public class CaesarCipher {
+public class EncryptDecrypt {
 
     // Криптографический алфавит
     public static final String ALPHABET = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя.,\":-!? ";

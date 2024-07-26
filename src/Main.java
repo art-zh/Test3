@@ -29,12 +29,12 @@ public class Main {
         String outputFile = scanner.nextLine().trim();
 
         // Значение сдвига
-        System.out.print("Необходимо ввести значение сдвига (0-" + (CaesarCipher.ALPHABET.length() - 1) + "): ");
+        System.out.print("Необходимо ввести значение сдвига (0-" + (EncryptDecrypt.ALPHABET.length() - 1) + "): ");
         int shift;
         try {
             shift = Integer.parseInt(scanner.nextLine().trim());
-            if (shift < 0 || shift >= CaesarCipher.ALPHABET.length()) {
-                System.out.println("Для значения сдвига введите целое число от 0 до " + (CaesarCipher.ALPHABET.length() - 1) + ".");
+            if (shift < 0 || shift >= EncryptDecrypt.ALPHABET.length()) {
+                System.out.println("Для значения сдвига введите целое число от 0 до " + (EncryptDecrypt.ALPHABET.length() - 1) + ".");
                 return;
             }
         } catch (NumberFormatException e) {
@@ -54,9 +54,9 @@ public class Main {
         // Шифровка и расшифровка
         String outputText;
         if (mode.equalsIgnoreCase ("encrypt")) {
-            outputText = CaesarCipher.encrypt(inputText, shift);
+            outputText = EncryptDecrypt.encrypt(inputText, shift);
         } else if (mode.equalsIgnoreCase("decrypt")) {
-            outputText = CaesarCipher.decrypt(inputText, shift);
+            outputText = EncryptDecrypt.decrypt(inputText, shift);
         } else {
             System.out.println("Просьба выбрать и написать 'encrypt' или 'decrypt'.");
             return;
